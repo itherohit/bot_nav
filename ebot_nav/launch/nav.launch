@@ -24,8 +24,8 @@
     <remap from="cmd_vel" to="cmd_vel"/>
     <remap from="odom" to="odom"/>
     <remap from="scan" to="ebot/laser/scan"/>
-    <param name="move_base/DWAPlannerROS/yaw_goal_tolerance" value="0.5"/>
-    <param name="move_base/DWAPlannerROS/xy_goal_tolerance" value="0.5"/>
   </node>
+
+  <node pkg="ebot_nav" type="movebase_client_py.py" name="movebase_client_py" output="screen"/>
 </launch>
 
