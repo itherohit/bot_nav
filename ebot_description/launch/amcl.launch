@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="map_file" default="$(find ebot_nav)/maps/sample_world.yaml"/>
+  <arg name="map_file" default="$(find ebot_nav)/maps/office_world.yaml"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
   
 

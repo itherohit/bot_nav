@@ -3,21 +3,12 @@
     <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ebot_description)/urdf/ebot.xacro'"/>
 
 <!--   office world -->
-	<include file="$(find ebot_gazebo)/launch/office_world.launch" />
+	<include file="$(find ebot_description)/launch/nav_test.launch" />
 <!-- Lab world -->
 <!--	<include file="$(find ebot_gazebo)/launch/lab_world.launch" /> -->
 
-<!-- Argument for spawning location -->
-	<arg name="x" default="0"/>
-	<arg name="y" default="0"/>
-	<arg name="z" default="0"/>
-		
-<!-- Spawn the robot model -->
-	<node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" 
-	    args="-urdf -param robot_description -model ebot -x $(arg x) -y $(arg y) -z $(arg z)" />
-
 <!-- include your navigation launch file  -->		
-
+    <include file="$(find ebot_nav)/launch/nav.launch" />
 
 
 <!--Uncomment these lines when you want to submit bag file for task2-->
